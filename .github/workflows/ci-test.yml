@@ -16,6 +16,17 @@ jobs:
         run: |
           pip install tox
           env -C "$GITHUB_WORKSPACE/$REPO_DIR" -- tox -e docs
+          
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Publish docs
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './docs'
+      - name: Deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v2
 
   sanity-test:
     runs-on: ubuntu-latest
