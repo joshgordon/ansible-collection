@@ -21,7 +21,7 @@ jobs:
       - name: Publish docs
         uses: actions/upload-pages-artifact@v2
         with:
-          path: '$GITHUB_WORKSPACE/$REPO_DIR/docs/build/'
+          path: '${{ env.REPO_DIR }}/docs/build/'
       - name: Deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v2
