@@ -4,6 +4,10 @@ on:
   - pull_request
 env:
   REPO_DIR: ansible_collections/maas/maas
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   docs:
     runs-on: ubuntu-latest
